@@ -33,3 +33,15 @@ def hours_ahead(request, offset):
     next_time = datetime.datetime.now() #+ datetime.timedelta(hours = offset)
 
     return render_to_response('hours_ahead.html', locals())
+
+def display_meta(request):
+    values = request.META.items()
+    values.sort()
+    html = []
+    for k, v in values:
+        html.append('<tr><td>%sf:</td><td>%s</td></tr>' % (k, v))
+
+    return HttpResponse('<tables>%s</tables>' % '\n'.join(html))
+
+def search_form(request):
+    return render_to_response('search_form_.html')
