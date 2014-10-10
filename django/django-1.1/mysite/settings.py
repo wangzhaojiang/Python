@@ -83,3 +83,10 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'mysite.books',
 )
+
+SEND_BROKEN_LINK_EMAILS = True
+
+MANAGERS = (
+
+        ('wangzhaojiang', '57259644@qq.com'),
+            )
